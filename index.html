@@ -3,8 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SERUSOFT, spearheaded by Sserunkuma Joel, is a student-led technology brand building reliable digital systems for education, businesses, and individuals.">
+    <meta name="keywords" content="Serusoft, Serunkuma, Sserunkuma Joel, Joel Serunkuma, Software Development, Uganda, Technology, Mobile Apps, Web Development">
+    <meta name="author" content="Eng. Sserunkuma Joel">
+
     <title>SERUSOFT - Technological Software Solutions</title>
+    <link rel="icon" href="file_00000000069c61f8afac34d84d8e58e0_1.png" type="image/png">
+    <meta property="og:title" content="SERUSOFT - Technological Software Solutions">
+    <meta property="og:description" content="SERUSOFT, spearheaded by Sserunkuma Joel, is a student-led technology brand building reliable digital systems for education, businesses, and individuals.">
+    <meta property="og:image" content="file_00000000069c61f8afac34d84d8e58e0_1.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "SERUSOFT",
+      "founder": {
+        "@type": "Person",
+        "name": "Eng. Sserunkuma Joel"
+      },
+      "description": "SERUSOFT is a student-led technology brand building reliable digital systems for education, businesses, and individuals.",
+      "image": "file_00000000069c61f8afac34d84d8e58e0_1.png"
+    }
+    </script>
     <style>
         /* Global Styles */
         :root {
@@ -178,9 +199,26 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
-            opacity: 0.1;
+            background: url('file_00000000069c61f8afac34d84d8e58e0_1.png') no-repeat center center/cover fixed;
+            opacity: 0.2;
             z-index: -1;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7));
+            z-index: -1;
+            animation: bgCycle 3s infinite alternate;
+        }
+        
+        @keyframes bgCycle {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
         }
         
         .hero-content {
@@ -200,7 +238,7 @@
         
         .hero p {
             font-size: 1.2rem;
-            color: var(--gray);
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 30px;
             line-height: 1.6;
         }
@@ -737,6 +775,11 @@
             .section-title h2 {
                 font-size: 2rem;
             }
+            
+            .hero::before {
+                background-attachment: scroll;
+                background-size: cover;
+            }
         }
         
         @media (max-width: 576px) {
@@ -925,7 +968,7 @@
                         </div>
                         <div class="contact-text">
                             <h4>Email</h4>
-                            <p>sserunkumajoel4@gmail.com</p>
+                            <p>serusoft4@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-detail">
@@ -948,18 +991,18 @@
                     </div>
                 </div>
                 <div class="contact-form fade-in delay-1">
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://formspree.io/f/xjgewzbl" method="POST">
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" required>
+                            <input type="text" id="name" name="name" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Your Email</label>
-                            <input type="email" id="email" class="form-control" required>
+                            <input type="email" id="email" name="email" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
-                            <select id="subject" class="form-control" required>
+                            <select id="subject" name="subject" class="form-control" required>
                                 <option value="">Select a service</option>
                                 <option value="Mobile App">Mobile App Development</option>
                                 <option value="Desktop System">Desktop System</option>
@@ -969,7 +1012,7 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Your Message</label>
-                            <textarea id="message" class="form-control" required></textarea>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
                         </div>
                         <button type="submit" class="submit-btn">Send Message</button>
                     </form>
@@ -1056,26 +1099,6 @@
                     behavior: 'smooth'
                 });
             });
-        });
-        
-        // Form Submission
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // Here you would typically send the form data to a server
-            // For demonstration, we'll just show an alert
-            alert(`Thank you, ${name}! Your message has been received. We'll contact you at ${email} soon regarding ${subject}.`);
-            
-            // Reset form
-            contactForm.reset();
         });
         
         // Scroll Animations
